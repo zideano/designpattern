@@ -20,15 +20,15 @@ public class BinaryTreeFactory<T> {
      * @param tree
      * @return particular
      */
-    public DataStorage<?> getBinaryTreeInstance(T tree) {
+    public DataStorage<T> getBinaryTreeInstance(T tree) {
         if (tree instanceof Integer) {
-            return new BinarySearchTreeInteger();
+            return (DataStorage<T>) new BinarySearchTreeInteger((Integer) tree);
         } else if (tree instanceof String) {
-            return new BinarySearchTreeString();
+            return (DataStorage<T>) new BinarySearchTreeString((String) tree);
         } else if (tree instanceof Character) {
-            return new BinarySearchTreeCharacter();
+            return (DataStorage<T>) new BinarySearchTreeCharacter((Character) tree);
         } else if (tree instanceof Comparable) {
-            return new BinarySearchTreeComparable();
+            return (DataStorage<T>) new BinarySearchTreeComparable((Comparable) tree);
         } else {
             throw new IllegalArgumentException("Unsupported Data Type for BST");
         }
