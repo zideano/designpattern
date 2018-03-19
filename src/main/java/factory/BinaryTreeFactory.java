@@ -6,8 +6,21 @@ import service.impl.BinarySearchTreeComparable;
 import service.impl.BinarySearchTreeInteger;
 import service.impl.BinarySearchTreeString;
 
+/**
+ * Binary Search Tree Factory Class that implements a single
+ * method getBinaryTreeInstance and returns the respective
+ * BST depending on the generic parameter type.
+ *
+ * @param <T>
+ */
 public class BinaryTreeFactory<T> {
-    public DataStorage<?> getBinaryTree(T tree) {
+
+    /**
+     *
+     * @param tree
+     * @return particular
+     */
+    public DataStorage<?> getBinaryTreeInstance(T tree) {
         if (tree instanceof Integer) {
             return new BinarySearchTreeInteger();
         } else if (tree instanceof String) {
